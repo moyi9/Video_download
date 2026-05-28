@@ -20,6 +20,7 @@
 
 ```
 Video_download/
+├── .gitignore
 ├── CLAUDE.md              # 项目规范
 ├── todo.md                # 任务进度
 ├── docs/
@@ -147,6 +148,13 @@ Body: {"url": "视频链接", "format_id": "格式ID"}
 Response: 视频文件流
 ```
 
+### 图片代理
+
+```
+GET /api/thumbnail?url=图片地址
+Response: 图片二进制流
+```
+
 ### AI 总结（SSE）
 
 ```
@@ -172,10 +180,17 @@ Response: SSE 事件流（answer, done）
 - 按钮：胶囊形（`rounded-full`）+ 渐变 + 阴影
 - 动画：`animate-fade-in-up` + delay 类
 
+## Git 仓库
+
+- GitHub：https://github.com/moyi9/Video_download
+- 分支：main
+
 ## 注意事项
 
 1. 抖音短链需要先通过 requests 跟踪重定向获取真实 URL
 2. B站字幕优先使用专用 API，回退到 yt-dlp
-3. SSE 传输时 token 需要 `json.dumps()` 编码，避免换行符破坏协议
-4. 思维导图 PNG 导出需要将 `foreignObject` 替换为 SVG `<text>`
-5. Content-Disposition 文件名需要 RFC 5987 编码支持中文
+3. B站封面/视频通过 `/api/thumbnail` 代理加载，绕过 Referer 防盗链
+4. YouTube 下载强制 `format='best'` 自动合并音视频，避免 SABR 限制
+5. SSE 传输时 token 需要 `json.dumps()` 编码，避免换行符破坏协议
+6. 思维导图 PNG 导出需要将 `foreignObject` 替换为 SVG `<text>`
+7. Content-Disposition 文件名需要 RFC 5987 编码支持中文

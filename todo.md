@@ -10,6 +10,7 @@
 | 阶段4：AI视频总结前端 | ✅ 已完成 | 2026-05-27 |
 | 阶段5：首页布局 + 移动端适配 | ✅ 已完成 | 2026-05-27 |
 | 阶段6：优化 + UI美化 | ✅ 已完成 | 2026-05-27 |
+| 阶段7：Git 初始化 + 推送 GitHub | ✅ 已完成 | 2026-05-28 |
 
 ---
 
@@ -82,6 +83,18 @@
 
 ---
 
+## 阶段7：Git 初始化 + 推送 GitHub
+
+- [x] 配置 git user.name / user.email
+- [x] 首次提交（40 files, 7009 insertions）
+- [x] 创建 GitHub 仓库 moyi9/Video_download
+- [x] 推送 main 分支到 GitHub
+- [x] 清理 remote URL 中的 token
+
+仓库地址：https://github.com/moyi9/Video_download
+
+---
+
 ## 待优化项
 
 ### 功能优化
@@ -119,6 +132,9 @@
 ## 修复记录
 
 ### 2026-05-28
+- Git 初始化并推送到 GitHub
+  - 仓库：moyi9/Video_download
+  - 首次提交：40 个文件，7009 行代码
 - 修复 YouTube 视频下载失败问题
   - 问题1：403 Forbidden - YouTube CDN 检查请求来源
   - 问题2：下载文件为空 - 音视频分离格式直接下载无内容
